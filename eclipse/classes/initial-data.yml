@@ -1,0 +1,17 @@
+User(admin):
+   username: admin
+   firstname: Administrator
+   lastname: BlogManager
+   email: frederic.delorme@web-context.com
+   blog: http://www.mcgivrer.fr/
+   avatar: user-administrator.png
+   active: true
+   role: administrator
+   
+Post(1):
+   title: My First Post
+   header: the header for the first post
+   content: the default content for the first Post
+   author: User(admin)
+   createdAt: 2010-10-10 12:00:00
+   status: p

@@ -1,0 +1,20 @@
+H1. Blogging
+
+h2. Description
+
+This is a first version of a Play! framework demo. Blog purpose seams to be the 
+most valuated demonstration about capabilities of such framework. All purpose, from data model,
+view and process are presented, and alpmost securization, "Admin" back-end, and user oriented interface
+to post news, and navigate through these.
+
+h2. History
+
+|date|version|comment|
+|2010-11-05|0.1|Creation|
+
+h2. News 
+
+2010-11-05, the first step
+
+Here we are, we've just created a new Play! application named "blogging". Now, we have to populate this project
+with minimalistic capabilities, like posting, and user management, not for security purpose, but about authoring.
