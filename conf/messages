@@ -1,0 +1,10 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+home.title=Blogging 
+home.footer.label=Copyright (c) 2010 - Frédéric Delorme
+home.posts.title=Lastest Stories
+home.history.title=History
+home.post.author.label=created by 
+home.post.createdAt.label= at 
+ 

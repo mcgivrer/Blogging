@@ -1,0 +1,5 @@
+31 oct. 2010 21:44:39,615 INFO  ~ Starting /home/frederic/projects/play/blogging
+31 oct. 2010 21:44:40,401 WARN  ~ You're running Play! in DEV mode
+31 oct. 2010 21:44:40,525 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+31 oct. 2010 21:44:57,262 INFO  ~ Connected to jdbc:hsqldb:mem:playembed
+31 oct. 2010 21:44:57,269 INFO  ~ Application 'Blogging' is now started !
