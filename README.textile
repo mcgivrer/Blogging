@@ -9,8 +9,8 @@ to post news, and navigate through these.
 
 h2. History
 
-|date|version|comment|
-|2010-11-05|0.1|Creation|
+|Date|Version|Author|Comment|
+|2010-11-05|0.1|Frédéric Delorme|Creation of the first bloc of the Blogging project|
 
 h2. News 
 
@@ -18,3 +18,16 @@ h2. News
 
 Here we are, we've just created a new Play! application named "blogging". Now, we have to populate this project
 with minimalistic capabilities, like posting, and user management, not for security purpose, but about authoring.
+
+h2. About the author
+
+McG. well known as McGivrer, is in "real life" Frédéric Delorme, a Java Expert and a software architect, working 
+in one of the biggest Computer Service oriented french enterprise. 
+
+Sparing time with small projects and learning new technology like framework (mostly web oriented) and sometimes, 
+some new languages (like Ruby and Ruby on Rails).
+
+My prefered exercise, is to bring such technology to our customer to raise there "time to delivery" with a 
+shortest lapse time, following some Agile process during project, and the less "customization" as possible, to
+keep project in well known Object Paradigm: re-usability.
+ 
