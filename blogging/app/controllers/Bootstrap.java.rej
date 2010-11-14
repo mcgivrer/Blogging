@@ -1,0 +1,12 @@
+--- Blogging/app/controllers/Bootstrap.java	2010-11-14 01:07:49.168957598 +0100
++++ blogging/app/controllers/Bootstrap.java	2010-11-13 00:44:26.533932001 +0100
+@@ -10,8 +10,8 @@
+     public void doJob() {
+         // Check if the database is empty
+         if(User.count() == 0) {
+-            Fixtures.load("initial-data.yml");
++           Fixtures.load("initial-data.yml");
+         }
+     }
+  
+-}+}

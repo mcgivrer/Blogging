@@ -7,6 +7,7 @@ body{
 	width: 80%;
 	text-align: justify;
 }
+/*---- Header -------------------------------------------------------*/
 #header{
 	display:block;
 	padding:1em 2em;
@@ -16,8 +17,9 @@ body{
 #header h1{
 	font-size:2em;
 }
+/*---- Page -------------------------------------------------------*/
 #page{
-	padding:2em;
+	padding:0em;
 }
 #page h1{
 	font-size:1.4em;
@@ -28,25 +30,64 @@ body{
 #page h3{
 	font-size:1.1em;
 }
-#content{
-	float:left;
-	margin-right:200px;
-	background-color:#F0F;
+/*---- Categories -------------------------------------------------------*/
+#categories{
+	background-color:#eee;	
 }
+#categories ul {
+	display:block;
+	border-bottom:0.2em solid #666;	
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+#categories ul li{
+	display:inline-block;
+}
+#categories ul li a{
+	display:block;
+	color:#999;
+	text-decoration:none;
+	padding:10px;
+	margin:0px;
+	border-right:0.1em solid #333;
+}
+#categories ul li a.active{
+	background-color:#999;
+	color:#fff;
+}
+#categories ul li a:hover{
+	background-color:#333;
+	color:#fff;
+}
+#categories ul li a:active{
+	background-color:#333;
+	color:#fff;
+}
+/*---- Sidebar -------------------------------------------------------*/
 #sidebar{
 	float:right;
-	width:200px;
+	width:20em;
 	background-color:#FF0;
 }
+/*---- Content -------------------------------------------------------*/
+#content{
+	float:left;
+	padding:0em;
+	margin:0em;
+	background-color:#F0F;
+}
 #content .posts{
-		
+	margin:0px;
+	padding:0.5em 0em;
 }
 #content .post{
 	padding: 1em;
-	margin:0.2em
+	margin:0em 0.2em;
 	border-bottom:1px dotted #555;
 	margin-bottom:10px;
 }
+/*---- Footer -------------------------------------------------------*/
 #footer{
 	clear:both;
 	background-color: #000;

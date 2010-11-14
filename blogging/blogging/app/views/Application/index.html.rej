@@ -1,0 +1,32 @@
+--- Blogging/app/views/Application/index.html	2010-11-14 01:07:49.168957598 +0100
++++ blogging/app/views/Application/index.html	2010-11-13 00:45:31.933932000 +0100
+@@ -1,7 +1,29 @@
+ #{extends 'main.html' /}
+ #{set title: 'Home' /}
++<div id="categories">
++	#{if categories}
++		<ul>
++		<li><a href="/category/0" id="0">&{'home.category.home.label'}</a></li>
++		#{list items:categories, as:'category'}
++			<li><a href="/category/&{category.id}" id="c_&{category.id}" title="&{category.description}">&{category.title}</a></li>
++		#{/list}
++		</ul>
++	#{/if}
++</div>
+ <div id="sidebar">
+ 	<h1>&{'home.history.title'}</h1>
++	#{if posts}
++		#{list items:oldposts, as:'post'}
++			<h2>&{'home.post.createdAt.label'} ${post.createdAt}</h2>
++			<div class⁼"post" id="post_${post.id}">
++					<h2>#${post.id}. ${post.title}</h2>
++				#{if post.header}
++				<div class="header">${post.header}</div>
++				#{/if}
++			</div>
++		#{/list}
++	#{/if}
++	
+ </div>
+ <div id="content">
+ 	<div id="posts" class="posts">

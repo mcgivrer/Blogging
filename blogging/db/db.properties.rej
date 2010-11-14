@@ -1,0 +1,9 @@
+--- Blogging/db/db.properties	2010-11-14 01:07:49.168957598 +0100
++++ blogging/db/db.properties	2010-11-13 09:03:31.165133000 +0100
+@@ -1,5 +1,5 @@
+ #HSQL Database Engine 1.8.0.10
+-#Thu Nov 04 09:52:48 CET 2010
++#Sat Nov 13 09:03:31 CET 2010
+ hsqldb.script_format=0
+ runtime.gc_interval=0
+ hsqldb.incremental_backup=false

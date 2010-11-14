@@ -1,0 +1,54 @@
+--- Blogging/eclipse/classes/initial-data.yml	2010-11-14 01:07:49.172957598 +0100
++++ blogging/eclipse/classes/initial-data.yml	2010-11-12 00:31:42.000000000 +0100
+@@ -1,17 +1,47 @@
+ User(admin):
+    username: admin
++   password: admin
+    firstname: Administrator
+-   lastname: BlogManager
++   lastname: Blog manager
+    email: frederic.delorme@web-context.com
+    blog: http://www.mcgivrer.fr/
+-   avatar: user-administrator.png
+-   active: true
++#   avatar: test
++   status: a
+    role: administrator
++
++User(moder):
++   username: moderator
++   password: moderator
++   firstname: Moderator
++   lastname: Blog publisher
++   email: admin@web-context.com
++   blog: http://www.mcgivrer.fr/
++#   avatar: test
++   status: a
++   role: moderator
++
++Category(news):
++   title: News
++   description: all the last news from the blog world.
++   position: 1
++   author: admin
++   createdAt: 2010-10-05 09:49:00
++   status: a
+    
+ Post(1):
+    title: My First Post
++   category: news
+    header: the header for the first post
+    content: the default content for the first Post
+-   author: User(admin)
++   author: admin
++   createdAt: 2010-10-10 12:00:00
++   status: p
++
++Post(2):
++   title: The second post from Moderator
++   category: news
++   header: the header for this second post
++   content: the default content for the second from moderator Post
++   author: moder
+    createdAt: 2010-10-10 12:00:00
+    status: p

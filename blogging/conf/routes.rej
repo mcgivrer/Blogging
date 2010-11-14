@@ -1,0 +1,16 @@
+--- Blogging/conf/routes	2010-11-14 01:07:49.168957598 +0100
++++ blogging/conf/routes	2010-11-13 09:01:59.057133002 +0100
+@@ -4,6 +4,8 @@
+ 
+ # Home page
+ GET     /                                       Application.index
++GET		/category/{id}							Application.index
++GET		/tag/{name}								Application.index
+ 
+ # Map static resources from the /app/public folder to the /public path
+ GET     /public/                                staticDir:public
+@@ -12,4 +14,4 @@
+ *       /{controller}/{action}                  {controller}.{action}
+ 
+ # Import CRUD routes
+-*      /admin									module:crud+*      /admin									module:crud

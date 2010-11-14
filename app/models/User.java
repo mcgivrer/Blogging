@@ -3,7 +3,10 @@
  */
 package models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import play.data.validation.Required;
 import play.db.jpa.Model;
@@ -20,13 +23,15 @@ public class User extends Model {
 	public String password;
 	public String firstname;
 	public String lastname;
+	@Required
 	public String email;
 	public String blog;
-	public String avatar;
-	public Boolean active;
+	public String image="test";
+	public String status="a";
 	@Required
 	public String role="user";
-
+	@OneToMany	
+	public List<Post> posts;
 	
 	public User(	String username,
 			String password,
@@ -34,8 +39,8 @@ public class User extends Model {
 			String lastname,
 			String email,
 			String blog,
-			String avatar,
-			Boolean active,
+			String image,
+			String status,
 			String role){
 		this.username=username;
 		this.password=password;
@@ -43,12 +48,12 @@ public class User extends Model {
 		this.lastname=lastname;
 		this.email=email;
 		this.blog=blog;
-		this.avatar=avatar;
+		this.image=image;
+		this.status=status;
 		this.role=role;
-		this.active=new Boolean(true);
 	}
 	
 	public String toString(){
-		return this.username+" / "+this.firstname+" "+this.lastname;
+		return this.username+" / "+this.firstname+" "+this.lastname + (this.status=="a" ? "enabled" : "disabled");
 	}
 }

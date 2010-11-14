@@ -1,0 +1,10 @@
+--- Blogging/conf/messages	2010-11-14 01:07:49.168957598 +0100
++++ blogging/conf/messages	2010-11-12 13:27:03.942423000 +0100
+@@ -3,6 +3,7 @@
+ #
+ home.title=Blogging 
+ home.footer.label=Copyright (c) 2010 - Frédéric Delorme
++home.category.home.label=Home
+ home.posts.title=Lastest Stories
+ home.history.title=History
+ home.post.author.label=created by 

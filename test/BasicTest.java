@@ -1,37 +1,41 @@
-import java.util.List;
-
 import models.User;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import play.test.Fixtures;
 import play.test.UnitTest;
 
 public class BasicTest extends UnitTest {
-
+	@Before
+	public void setup(){
+		//Fixtures.deleteAll();
+	}
     @Test
     public void userCreateTest() {
     	//create User
-    	User user=new User("admin","admin","Administrator","HomeBlogging","","","",new Boolean(true),"admin");
+    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a","admin");
     	user.save();
-        assertNull(user.id);
+        assertNotNull(user.id);
     }
     @Test
     public void userUpdateTest() {
     	//create User
-    	User user=new User("admin","admin","Administrator","HomeBlogging","","","",new Boolean(true),"admin");
+    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a","admin");
     	user.save();
-        assertNull(user.id);
+    	assertNotNull(user.id);
         user.firstname="Administrateur";
         user.save();
+        assertEquals("Administrateur", user.firstname);
     }
     @Test
     public void userRetrieveTest() {
     	//create User
-    	User user=new User("admin","admin","Administrator","HomeBlogging","","","",new Boolean(true),"admin");
+    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a","admin");
     	user.save();
     	//create User
-    	List<User> users = User.find("byUsername","admin").fetch(1);
-    	assertNull(users);
+    	User userRead = User.find("byUsername","admin").first();
+    	assertNull(userRead);
 //    	assertNotEquals()
     }
 }
