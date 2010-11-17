@@ -39,31 +39,31 @@
 		            </li>
 		        #{/secure.check}
 		    </ul>
-		    
-
-#{if posts}
-		#{list items:posts, as:'post'}
-			<div class⁼"post" id="post_${post.id}">
-					<h2>#${post.id}. ${post.title}</h2>
-				#{if post.header}
-				<div class="header">${post.header}</div>
-				#{/if}
-				<div class="content">${post.content}</div>
-				<div class="infos">
-					<span class="author">&{'home.post.author.label'} <a href="@{Application.postBy(post.author.id)}">${post.author.username}</a></span>
-					<span class="date">&{'home.post.createdAt.label'} <a href="@{Application.postFrom(post.createdAt)}">${post.createdAt.format('dd/MM/yyyy')}</a></span>
-					<span class="tags">&{'home.post.tags.label'}
-				        #{list items:post.tags, as:'tag'}
-            				<a href="@{Application.tag(tag.name)}">${tag.name}</a>${tag_isLast ? '' : ', '}
-        				#{/list}
-				</div>
-			</div>
-		#{/list}
-	#{/if}
-	#{else}
-		<p>no post for this criteria</p>
-	#{/else}
 		    #{doLayout /}  
+		    
+		
+			#{if posts}
+				#{list items:posts, as:'post'}
+					<div class⁼"post" id="post_${post.id}">
+							<h2>#${post.id}. ${post.title}</h2>
+						#{if post.header}
+						<div class="header">${post.header}</div>
+						#{/if}
+						<div class="content">${post.content}</div>
+						<div class="infos">
+							<span class="author">&{'home.post.author.label'} <a href="@{Application.postBy(post.author.id)}">${post.author.username}</a></span>
+							<span class="date">&{'home.post.createdAt.label'} <a href="@{Application.postFrom(post.createdAt)}">${post.createdAt.format('dd/MM/yyyy')}</a></span>
+							<span class="tags">&{'home.post.tags.label'}
+						        #{list items:post.tags, as:'tag'}
+		            				<a href="@{Application.tag(tag.name)}">${tag.name}</a>${tag_isLast ? '' : ', '}
+		        				#{/list}
+						</div>
+					</div>
+				#{/list}
+			#{/if}
+			#{else}
+				<p>no post for this criteria</p>
+			#{/else}
         </div>
         
         <p id="footer">
