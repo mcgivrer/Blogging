@@ -7,5 +7,7 @@ home.category.home.label=Home
 home.posts.title=Lastest Stories
 home.history.title=History
 home.post.author.label=created by 
-home.post.createdAt.label= at 
+home.post.createdAt.label= on the
+home.post.tags.label= tagged as:
+
  

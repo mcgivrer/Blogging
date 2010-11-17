@@ -3,9 +3,9 @@
 <div id="categories">
 	#{if categories}
 		<ul>
-		<li><a href="/category/0" id="0">&{'home.category.home.label'}</a></li>
+		<li><a href="@{Application.category(0)}" id="0">&{'home.category.home.label'}</a></li>
 		#{list items:categories, as:'category'}
-			<li><a href="/category/&{category.id}" id="c_&{category.id}" title="&{category.description}">&{category.title}</a></li>
+			<li><a href="@{Application.category(category.id)}" id="c_&{category.id}" title="&{category.description}">&{category.title}</a></li>
 		#{/list}
 		</ul>
 	#{/if}
@@ -23,6 +23,10 @@
 			</div>
 		#{/list}
 	#{/if}
+	#{else}
+		<p>no post for this criteria</p>
+	#{/else}
+	
 	
 </div>
 <div id="content">
@@ -37,11 +41,18 @@
 				#{/if}
 				<div class="content">${post.content}</div>
 				<div class="infos">
-					<span class="author">&{'home.post.author.label'} ${post.author}</span>
-					<span class="date">&{'home.post.createdAt.label'} ${post.createdAt}</span>
+					<span class="author">&{'home.post.author.label'} <a href="@{Application.postBy(post.author.id)}">${post.author.username}</a></span>
+					<span class="date">&{'home.post.createdAt.label'} <a href="@{Application.postFrom(post.createdAt)}">${post.createdAt.format('dd/MM/yyyy')}</a></span>
+					<span class="tags">&{'home.post.tags.label'}
+				        #{list items:post.tags, as:'tag'}
+            				<a href="@{Application.tag(tag.name)}">${tag.name}</a>${tag_isLast ? '' : ', '}
+        				#{/list}
 				</div>
 			</div>
 		#{/list}
 	#{/if}
+	#{else}
+		<p>no post for this criteria</p>
+	#{/else}
 	</div> 
 </div>

@@ -19,6 +19,8 @@ import play.db.jpa.Model;
  */
 @Entity
 public class Category extends Model {
+	@ManyToOne
+	public Category parent;
 	@Required
 	public String title;
 	public String description;
