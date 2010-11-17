@@ -14,14 +14,14 @@ public class BasicTest extends UnitTest {
     @Test
     public void userCreateTest() {
     	//create User
-    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a","admin");
+    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a",User.UserRole.ADMINISTRATOR);
     	user.save();
         assertNotNull(user.id);
     }
     @Test
     public void userUpdateTest() {
     	//create User
-    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a","admin");
+    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a",User.UserRole.ADMINISTRATOR);
     	user.save();
     	assertNotNull(user.id);
         user.firstname="Administrateur";
@@ -31,7 +31,7 @@ public class BasicTest extends UnitTest {
     @Test
     public void userRetrieveTest() {
     	//create User
-    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a","admin");
+    	User user=new User("admin","admin","Administrator","HomeBlogging","","","","a",User.UserRole.ADMINISTRATOR);
     	user.save();
     	//create User
     	User userRead = User.find("byUsername","admin").first();

@@ -10,6 +10,8 @@ import java.util.TreeSet;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -23,6 +25,12 @@ import play.db.jpa.Model;
  */
 @Entity
 public class Post extends Model {
+	public enum PostState{
+		CREATED,
+		VALIDATED,
+		PUBLISHED
+	}
+	
 	@Required
 	public String title;
 	@Required
@@ -38,7 +46,8 @@ public class Post extends Model {
 	public User author;
 	public Date createdAt;
 	@Required
-	public String status;
+	@Enumerated(EnumType.STRING)
+	public PostState status;
 
 	@ManyToMany(cascade = CascadeType.PERSIST)
 	public Set<Tag> tags;
@@ -56,11 +65,11 @@ public class Post extends Model {
 		} else {
 			this.createdAt = createdAt;
 		}
-		this.status = "c";
+		this.status = PostState.CREATED;
 	}
 
 	public void publish() {
-		this.status = "p";
+		this.status = PostState.PUBLISHED;
 	}
 
 	public Post tagItWith(String name) {

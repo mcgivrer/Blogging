@@ -7,18 +7,18 @@ User(admin):
    weblog: http://www.mcgivrer.fr/
    image: test
    status: a
-   role: administrator
+   role: ADMINISTRATOR
 
 User(moder):
    username: moderator
    password: moderator
    firstname: Moderator
    lastname: Blog publisher
-   email: admin@web-context.com
+   email: moderator@web-context.com
    weblog: http://www.mcgivrer.fr/
    image: test
    status: a
-   role: moderator
+   role: MODERATOR
 
 Category(root):
    title: root
@@ -86,7 +86,7 @@ Post(1):
          - blog
          - post
    createdAt: 2010-10-10 12:00:00
-   status: p
+   status: PUBLISHED
 
 Post(2):
    title: The second post from Moderator
@@ -99,4 +99,4 @@ Post(2):
          - blog
    author: moder
    createdAt: 2010-10-10 12:00:00
-   status: p
+   status: PUBLISHED

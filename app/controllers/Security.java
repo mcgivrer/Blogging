@@ -24,7 +24,7 @@ public class Security extends controllers.Secure.Security {
 	
 	static boolean check(String profile) {
 	    if("admin".equals(profile)) {
-	        return User.find("byEmail", connected()).<User>first().role.equals("administrator");
+	        return User.find("byEmail", connected()).<User>first().isAdmin();
 	    }
 	    return false;
 	}
