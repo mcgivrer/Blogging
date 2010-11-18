@@ -8,6 +8,15 @@ import models.*;
 
 public class Application extends Controller {
 
+    @Before
+    static void setConnectedUser() {
+        if(Security.isConnected()) {
+            User user = User.find("byEmail", Security.connected()).first();
+            renderArgs.put("user", user);
+        }
+    }
+
+  
     public static void index() {
         List<Post> posts = Post.find("status='"+Post.PostState.PUBLISHED+"' order by createdAt desc").fetch(1);
         List<Posts> oldposts = Post.find("status='"+Post.PostState.PUBLISHED+"' order by createdAt desc").fetch(1, 5);

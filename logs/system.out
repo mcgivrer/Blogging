@@ -1,0 +1,8 @@
+16:28:54,754 INFO  ~ Starting /home/frederic/projects/play/Blogging
+16:28:54,758 INFO  ~ Module secure is available (/home/frederic/tools/java/framework/play-1.1/modules/secure)
+16:28:54,758 INFO  ~ Module bespin is available (/home/frederic/tools/java/framework/play-1.1/modules/bespin-1.0.1)
+16:28:54,758 INFO  ~ Module crud is available (/home/frederic/tools/java/framework/play-1.1/modules/crud)
+16:28:56,096 WARN  ~ You're running Play! in DEV mode
+16:28:56,328 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+16:29:12,452 INFO  ~ Connected to jdbc:hsqldb:mem:playembed
+16:29:13,729 INFO  ~ Application 'Blogging' is now started !

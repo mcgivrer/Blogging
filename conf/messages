@@ -9,5 +9,8 @@ home.history.title=History
 home.post.author.label=created by 
 home.post.createdAt.label= on the
 home.post.tags.label= tagged as:
+home.welcome.user=Welcome 
+home.tools.admin.label=Administration
+admin.list.posts.label=Your posts
 
  

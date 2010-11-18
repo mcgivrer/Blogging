@@ -13,10 +13,15 @@
     <body>
 	<div id="header">
 		<h1>&{'home.title'}</h1>
-		<ul id="tools">
-		    <li>
-		        <a href="@{Admin.index()}">Log in to write something</a>
-		    </li>
+		<ul class="tools">
+      #{if user}
+      <li>&{'home.welcome.user'} ${user.firstname}</li>
+      <li><a href="@{Admin.index()}">&{'home.tools.admin.label'}</a></li>
+      <li><a href="@{Secure.logout()}">Logout</a></li>
+      #{/if}
+      #{else}
+      <li><a href="@{Admin.index()}">Login</a></li>
+      #{/else}
 		</ul>
 	</div>
 	<div id="page">

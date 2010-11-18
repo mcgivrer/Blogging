@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Administration</title>		
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        #{get 'moreStyles' /}	
-        <link rel="stylesheet" type="text/css" media="screen" 
-                href="@{'/public/stylesheets/main.css'}" />
-        <link rel="shortcut icon" type="image/png" 
-                href="@{'/public/images/favicon.png'}" />
-        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}"></script>
-        
+<head>
+  <title>Administration</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  #{get 'moreStyles' /}
+  <link rel="stylesheet" type="text/css" media="screen"
+  href="@{'/public/stylesheets/main.css'}" />
+  <link rel="shortcut icon" type="image/png"
+  href="@{'/public/images/favicon.png'}" />
+  <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}"></script>
+
     </head>
     <body id="admin">
         
         <div id="header">
             <h1>Blogging.</h1><h2>administration</h2>
-            <ul id="tools">
-                <li>
-                    <a href="@{Secure.logout()}">Log out</a>
-                </li>
+            <ul class="tools">
+              <li>&{'home.welcome.user'} ${user.firstname}</li>
+              <li><a href="@{Application.index()}">Home</a></li>
+              <li><a href="@{Secure.logout()}">Logout</a></li>
             </ul>
         </div>
         
         <div id="page">
-			<ul id="menu">
+			    <ul id="menu">
 		        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
 		            <a href="@{Admin.index()}">My posts</a>
 		        </li>
@@ -38,32 +38,33 @@
 		                <a href="@{Users.list()}">Users</a>
 		            </li>
 		        #{/secure.check}
-		    </ul>
-		    #{doLayout /}  
-		    
-		
-			#{if posts}
-				#{list items:posts, as:'post'}
-					<div class⁼"post" id="post_${post.id}">
-							<h2>#${post.id}. ${post.title}</h2>
-						#{if post.header}
-						<div class="header">${post.header}</div>
-						#{/if}
-						<div class="content">${post.content}</div>
-						<div class="infos">
-							<span class="author">&{'home.post.author.label'} <a href="@{Application.postBy(post.author.id)}">${post.author.username}</a></span>
-							<span class="date">&{'home.post.createdAt.label'} <a href="@{Application.postFrom(post.createdAt)}">${post.createdAt.format('dd/MM/yyyy')}</a></span>
-							<span class="tags">&{'home.post.tags.label'}
-						        #{list items:post.tags, as:'tag'}
-		            				<a href="@{Application.tag(tag.name)}">${tag.name}</a>${tag_isLast ? '' : ', '}
-		        				#{/list}
-						</div>
-					</div>
-				#{/list}
-			#{/if}
-			#{else}
-				<p>no post for this criteria</p>
-			#{/else}
+		      </ul>
+		      #{doLayout /}  
+          #{if posts}
+          <div class="posts">
+            <h2>&{'admin.list.posts.label'}</h2>
+            #{list items:posts, as:'post'}
+              <div class⁼"post" id="post_${post.id}">
+                <h3>#${post.id}. ${post.title}</h3>
+                  #{if post.header}
+                  <div class="header">${post.header}</div>
+                  #{/if}
+                  <div class="content">${post.content}</div>
+                  <div class="infos">
+                    <span class="author">&{'home.post.author.label'} <a href="@{Application.postBy(post.author.id)}">${post.author.username}</a></span>
+                    <span class="date">&{'home.post.createdAt.label'} <a href="@{Application.postFrom(post.createdAt)}">${post.createdAt.format('dd/MM/yyyy')}</a></span>
+                    <span class="tags">&{'home.post.tags.label'}
+                      #{list items:post.tags, as:'tag'}
+                      <a href="@{Application.tag(tag.name)}">${tag.name}</a>${tag_isLast ? '' : ', '}
+                      #{/list}
+                  </div>
+                </div>
+            #{/list}
+          </div>
+          #{/if}
+          #{else}
+            <p>no post for this criteria</p>
+          #{/else}
         </div>
         
         <p id="footer">

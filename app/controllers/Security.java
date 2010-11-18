@@ -11,14 +11,28 @@ import models.User;
  *
  */
 public class Security extends controllers.Secure.Security {
+	
+	/**
+	 * Authentication method
+	 * @param email
+	 * @param password
+	 * @return
+	 */
 	public static boolean authenticate(String email, String password){
 		return User.connect(email,password)!=null;
 	}
+	
+	/**
+	 * Route to Controller/method on positive authentication
+	 */
 	static void onAuthenticated(){
 		Admin.index();	
 	}
 	
-	static void onDisconnect(){
+	/**
+	 * Route to Controller/Method on Diconnection
+	 */
+	static void onDisconnected(){
 		Application.index();
 	}
 	
