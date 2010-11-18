@@ -1,4 +1,6 @@
-H1. Blogging
+h1. Blogging
+
+The "new" blogging thing from *web*context.
 
 h2. Description
 
